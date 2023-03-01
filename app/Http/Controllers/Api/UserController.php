@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -24,4 +25,5 @@ class UserController extends Controller
             return $this->ResponseWithError([],'user not found');
         }
     }
+    
 }
