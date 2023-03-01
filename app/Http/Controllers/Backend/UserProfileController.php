@@ -20,4 +20,23 @@ class UserProfileController extends Controller
         $data = Auth::user();
         return view('backend.user_profile.user_profile_edit',compact('data'));
     }
+    public function sample(){
+        // $log_user = Auth::user();
+        return view('backend.user_profile.sample');
+    }
+    public function update(Request $request ){
+        $data = Auth::user();
+        $data->name = $request->name;
+        $data->email = $request->email;
+
+        if($request->file('profile_photo_path')){
+            $file = $request->file('profile_photo_path');
+
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/user_images'),$filename);
+            $data['profile_photo_path'] = $filename;
+        }
+        $data->save();
+        return Redirect()->route('user.profile');
+    }
 }

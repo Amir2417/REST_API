@@ -28,9 +28,14 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         $users= User::all();
-        return view('backend.index',compact('users'));
+        $log_user = Auth::user();
+        return view('backend.index',compact('users','log_user'));
     })->name('dashboard');
 });
-Route::get('/user_logout',[UserProfileController::class,'logout'])->name('user.logout');
-Route::get('/user_profile',[UserProfileController::class,'user_profile'])->name('user.profile');
-Route::get('/user_profile_edit',[UserProfileController::class,'user_profile_edit'])->name('user.profile.edit');
+Route::prefix('user')->group(function(){
+    Route::get('/logout',[UserProfileController::class,'logout'])->name('user.logout');
+    Route::get('/profile',[UserProfileController::class,'user_profile'])->name('user.profile');
+    Route::get('/profile_edit',[UserProfileController::class,'user_profile_edit'])->name('user.profile.edit');
+    Route::get('/sample',[UserProfileController::class,'sample'])->name('sample');
+    Route::post('/profile_update',[UserProfileController::class,'update'])->name('user.profile.update');
+});
