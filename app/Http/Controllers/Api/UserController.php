@@ -16,4 +16,12 @@ class UserController extends Controller
             return $this->ResponseWithError([],$th->getMessage());
         }
     }
+    public function show($id){
+        $users = User::find($id);
+        try {
+            return $this->ResponseWithSuccess($users,"Hi $users->name");
+        } catch (\Throwable $th) {
+            return $this->ResponseWithError([],'user not found');
+        }
+    }
 }

@@ -15,7 +15,7 @@ class Controller extends BaseController
         return response()->json([
             'success'=>true,
             'data'=>$data,
-            'message'=>'Successfully Data Loaded',
+            'message'=>$message,
             'status'=>200
         ]);
     }
@@ -23,7 +23,7 @@ class Controller extends BaseController
         return response()->json([
             'success'=>false,
             'data'=>$data,
-            'message'=>'Data not Found',
+            'message'=>$message,
             'status'=>404
         ]);
     }
