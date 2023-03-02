@@ -20,10 +20,6 @@ class UserProfileController extends Controller
         $data = Auth::user();
         return view('backend.user_profile.user_profile_edit',compact('data'));
     }
-    public function sample(){
-        // $log_user = Auth::user();
-        return view('backend.user_profile.sample');
-    }
     public function update(Request $request ){
         $data = Auth::user();
         $data->name = $request->name;

@@ -28,14 +28,14 @@
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="" class="">
-                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>AmaderTong</h3>
                             </a>
                             <h3>Sign In</h3>
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-4">
                                 <input type="email" class="form-control" name="email" required id="floatingInput" autofocus placeholder="email">
                                 <label for="floatingInput">Email address</label>
                             </div>
@@ -45,10 +45,10 @@
                             </div>
 
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <div class="form-check">
+                                {{-- <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
+                                </div> --}}
                                 <a href="{{ route('password.request') }}">Forgot Password</a>
                             </div>
                             <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
