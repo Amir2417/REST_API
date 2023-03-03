@@ -57,7 +57,7 @@ class UserProfileController extends Controller
                 $user ->password = Hash::make($request->password);
                 $user->save();
                 Auth::logout();
-
+                //notify
                 return Redirect()->route('login');
             }
             else{

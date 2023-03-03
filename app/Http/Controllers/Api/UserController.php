@@ -75,8 +75,7 @@ class UserController extends Controller
         // }
 
         if (Auth::guard('sanctum')->check()) {
-            $token = auth('sanctum')->user()->token();
-            // $token->revoke();
+            $token = auth('sanctum')->user()->tokens()->delete();
             return $this->ResponseWithSuccess([],"Logout Successfully");
         } else {
             return $this->ResponseWithError([],"Error");
@@ -84,3 +83,4 @@ class UserController extends Controller
 
     }
 }
+
