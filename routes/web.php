@@ -37,4 +37,6 @@ Route::prefix('user')->group(function(){
     Route::get('/profile',[UserProfileController::class,'user_profile'])->name('user.profile');
     Route::get('/profile_edit',[UserProfileController::class,'user_profile_edit'])->name('user.profile.edit');
     Route::post('/profile_update',[UserProfileController::class,'update'])->name('user.profile.update');
+    Route::get('/change/password',[UserProfileController::class,'change_password'])->name('user.change.password');
+    Route::post('/change/password/update',[UserProfileController::class,'change_password_update'])->name('user.profile.change.password.update');
 });
