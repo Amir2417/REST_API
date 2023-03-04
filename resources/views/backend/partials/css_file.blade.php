@@ -16,3 +16,6 @@
 
 <!-- Template Stylesheet -->
 <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
+
+
+@notifyCss

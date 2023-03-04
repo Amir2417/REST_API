@@ -11,3 +11,5 @@
 
 <!-- Template Javascript -->
 <script src="{{ asset('backend/js/main.js') }}"></script>
+
+@notifyJs

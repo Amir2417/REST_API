@@ -7,7 +7,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
+    <style type="text/css">
+        .notify{
+            z-index:1000000;
+            margin: top 5%;
+        }
+    </style>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -52,6 +57,7 @@
     </div>
 
     @include('backend.partials.js_file')
+    <x:notify-messages />
 </body>
 
 </html>

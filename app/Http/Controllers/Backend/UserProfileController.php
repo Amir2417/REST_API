@@ -36,6 +36,7 @@ class UserProfileController extends Controller
             $data['profile_photo_path'] = $filename;
         }
         $data->save();
+        notify()->success('User Profile Update Successfully!');
         return Redirect()->route('user.profile');
     }
     public function change_password(){
@@ -58,12 +59,15 @@ class UserProfileController extends Controller
                 $user->save();
                 Auth::logout();
                 //notify
+                notify()->success('Password Change Successfully!');
                 return Redirect()->route('login');
             }
             else{
+                notify()->error('New password and Confirm password did not match!');
                 return Redirect()->back();
             }
         }else{
+            notify()->error('Current password and Request password did not match!');
             return Redirect()->back();
         }
     }
