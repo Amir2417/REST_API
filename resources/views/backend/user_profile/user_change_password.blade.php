@@ -21,7 +21,7 @@
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control" id="floatingInput"
                                name="password_confirmation" required placeholder="Re-type Password">
-                            <label for="floatingInput">Re-type Password</label>
+                            <label for="floatingInput">Confirm Password</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Update</button>
